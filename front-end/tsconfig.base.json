@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@front-end/alphaweb/feat/auth": ["libs/alphaweb/feat/auth/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
