@@ -1,1 +1,28 @@
-<p>register works!</p>
+<div>
+
+  <mat-card>
+    <mat-card-title> Register </mat-card-title>
+    <mat-card-content>
+    <form (ngSubmit)="OnRegister()" [formGroup]="registerForm">
+
+
+      <mat-form-field>
+        <mat-label>Enter your email</mat-label>
+          <input matInput placeholder="pat@example.com" formControlName="email" required>
+<!--        @if (email.invalid){-->
+<!--        <mat-error>{{getErrorMessage()}}</mat-error>}-->
+
+
+        </mat-form-field>
+      <button type="submit" mat-flat-button color="primary">Sign up Button</button>
+
+    </form>
+    </mat-card-content>
+  </mat-card>
+
+
+</div>
+
+
+
+
