@@ -4,17 +4,23 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatInput} from '@angular/material/input';
 import { MatCard, MatCardContent, MatCardTitle} from '@angular/material/card';
+import {MatIcon} from '@angular/material/icon';
 
 @Component({
   selector: 'front-end-register',
   standalone: true,
-  imports: [CommonModule, MatFormFieldModule, MatInput, ReactiveFormsModule, MatCard, MatCardTitle, MatCardContent],
+  imports: [CommonModule, MatFormFieldModule, MatInput, ReactiveFormsModule, MatCard, MatCardTitle, MatCardContent, MatIcon],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
 })
 export class RegisterComponent {
 
   registerForm: FormGroup;
+
+  hide=false;
+
+
+
   // getErrorMessage() {
   //   if (this.email.hasError('required')) {
   //     return 'You must enter a value';
@@ -28,8 +34,8 @@ export class RegisterComponent {
       //firstName: new FormControl(),
       //lastName: new FormControl(),
       email: new FormControl('', [Validators.required, Validators.email]),
-      // password: new FormControl('', [Validators.required]),
-      // passwordConfirm: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required]),
+      passwordConfirm: new FormControl('', [Validators.required]),
     })
   }
 
