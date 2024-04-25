@@ -15,7 +15,14 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@front-end/alphaweb/feat/auth": ["libs/alphaweb/feat/auth/src/index.ts"]
+      "@alphaweb/util": ["libs/alphaweb/util/index.ts"],
+      "@alphaweb/util/validators/password": [
+        "libs/alphaweb/util/validators/Validators.ts"
+      ],
+      "@alphaweb/data/auth": ["libs/alphaweb/data/auth/src/index.ts"],
+      "@alphaweb/data/user": ["libs/alphaweb/data/user/src/index.ts"],
+      "@alphaweb/feat/auth": ["libs/alphaweb/feat/auth/src/index.ts"],
+      "@alphaweb/ui/strengthbar": ["libs/alphaweb/ui/strengthbar/src/lib/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

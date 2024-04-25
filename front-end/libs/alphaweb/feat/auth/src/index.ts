@@ -1,3 +1,3 @@
-export * from './lib/register/register.component';
+export * from './lib/register/register-container.component';
 
 

@@ -1,0 +1,17 @@
+{
+  "name": "alphaweb-data-user",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/alphaweb/data/user/src",
+  "prefix": "front-end",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outouts": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/alphaweb/data/user/**/*.ts", "libs/alphaweb/data/user/**/*.html"]
+      }
+    }
+  }
+}

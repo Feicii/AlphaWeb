@@ -1,0 +1,9 @@
+{
+  "name": "alphaweb-data-auth",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/alphaweb/data/auth/src",
+  "prefix": "front-end",
+  "tags": [],
+  "projectType": "library",
+  "targets": {}
+}
