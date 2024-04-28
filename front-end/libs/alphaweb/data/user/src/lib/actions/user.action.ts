@@ -5,3 +5,7 @@ export interface UserRegistrationCommand{
   lastName: string
 }
 
+export interface UserLoginCommand{
+  email: string,
+  password: string
+}

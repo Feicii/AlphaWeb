@@ -11,11 +11,12 @@ import {
   RegisterFormErrorType,
   RegisterFormType,
 } from '../model/register-view.model';
+import {PasswordStrengthBarComponent} from "../../../../../ui/strengthbar/src";
 
 @Component({
   selector: 'front-end-register',
   standalone: true,
-  imports: [CommonModule, MatFormFieldModule, MatInput, ReactiveFormsModule, MatCard, MatCardTitle, MatCardContent, MatIcon],
+  imports: [CommonModule, MatFormFieldModule, MatInput, ReactiveFormsModule, MatCard, MatCardTitle, MatCardContent, MatIcon, PasswordStrengthBarComponent],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
 })

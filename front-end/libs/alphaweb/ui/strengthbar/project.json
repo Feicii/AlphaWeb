@@ -1,0 +1,20 @@
+{
+  "name": "alphaweb-ui-strengthbar",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/alphaweb/ui/strengthbar/src",
+  "prefix": "alphaweb",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/alphaweb/ui/strengthbar/**/*.ts",
+          "libs/alphaweb/ui/strengthbar/**/*.html"
+        ]
+      }
+    }
+  }
+}

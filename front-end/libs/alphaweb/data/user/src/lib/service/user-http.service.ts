@@ -1,4 +1,4 @@
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {register} from "@swc-node/register/register";
 import {UserRegistrationCommand} from "../actions/user.action";
 import {inject, Injectable} from "@angular/core";
@@ -16,4 +16,11 @@ export class UserHttpService{
         // `firstValueFrom` turns an `Observable` into a `Promise`
         return lastValueFrom(this.http.post<User>(`/api/registration`, command));
     }
+  // login(headers: HttpHeaders): Promise<User> {
+  // login(): Promise<User> {
+  // `firstValueFrom` turns an `Observable` into a `Promise`
+  // return lastValueFrom(this.http.get<User>('/api/user', { headers }));
+  // return lastValueFrom(this.http.get<User>('/api/user'));
+  // return lastValueFrom(this.http.get<User>('/api/user'));
+  // }
 }
