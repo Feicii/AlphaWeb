@@ -1,3 +1,18 @@
+#staticSquare {
+  width: 100%; /* Full width of the viewport */
+  height: 100px; /* Fixed height */
+  background-color: #0A5C94; /* Specific blue color */
+  color: white; /* Text color */
+  display: flex;
+  align-items: center; /* Centers text vertically */
+  justify-content: flex-start; /* Aligns text horizontally to the left */
+  padding-left: 20px; /* Adds some spacing from the left edge */
+  position: absolute; /* Positioned relative to the nearest positioned ancestor */
+  top: 0; /* At the very top of the page */
+  left: 0; /* At the very left of the page */
+  font-size: 24px; /* Increases text size */
+  font-family: Arial, sans-serif; /* Specifies font family */
+}
 :host {
   display: flex;
   justify-content: center;
