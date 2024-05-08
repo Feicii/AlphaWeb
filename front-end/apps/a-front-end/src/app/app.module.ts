@@ -5,11 +5,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {RegisterContainerComponent} from '@alphaweb/feat/auth';
 import {HTTP_INTERCEPTORS ,HttpClientModule} from '@angular/common/http';
 import {BasicAuthInterceptor, ErrorInterceptor } from '@alphaweb/data/auth';
+import {RouterModule} from '@angular/router';
+import {appRoutes} from './app.routes';
 
 
 @NgModule({
-  declarations: [],
-  imports: [HttpClientModule,BrowserModule, BrowserAnimationsModule, RegisterContainerComponent],
+  declarations: [AppComponent],
+  imports: [HttpClientModule,BrowserModule, BrowserAnimationsModule, RegisterContainerComponent,RouterModule.forRoot(appRoutes, { useHash: true })],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

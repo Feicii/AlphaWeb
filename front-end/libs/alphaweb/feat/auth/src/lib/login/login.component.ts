@@ -40,12 +40,12 @@ export class LoginComponent {
   // Typesafe Error messages for each form control
   #errorMap: LoginFormErrorType = {
     email: {
-      required: 'email is required',
-      email: 'email is not valid',
+      required: 'Email is required',
+      email: 'Email is not valid',
     },
     password: {
-      required: 'password is required',
-      weak: 'password not strong enough',
+      required: 'Password is required',
+      weak: 'Password not strong enough',
     },
   };
 

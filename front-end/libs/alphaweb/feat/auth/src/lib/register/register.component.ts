@@ -12,11 +12,13 @@ import {
   RegisterFormType,
 } from '../model/register-view.model';
 import {PasswordStrengthBarComponent} from "../../../../../ui/strengthbar/src";
+import {MatButton, MatIconButton} from "@angular/material/button";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'front-end-register',
   standalone: true,
-  imports: [CommonModule, MatFormFieldModule, MatInput, ReactiveFormsModule, MatCard, MatCardTitle, MatCardContent, MatIcon, PasswordStrengthBarComponent],
+  imports: [CommonModule, MatFormFieldModule, MatInput, ReactiveFormsModule, MatCard, MatCardTitle, MatCardContent, MatIcon, PasswordStrengthBarComponent, MatButton, MatIconButton, RouterLink],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
 })
@@ -31,24 +33,24 @@ export class RegisterComponent {
   // Typesafe Error messages for each form control
   #errorMap: RegisterFormErrorType = {
     email: {
-      required: 'email is required',
-      email: 'email is not valid',
+      required: 'Email is required',
+      email: 'Email is not valid',
     },
     password: {
-      required: 'password is required',
-      weak: 'password not strong enough',
+      required: 'Password is required',
+      weak: 'Password not strong enough',
     },
     passwordConfirm: {
-      required: 'password confirm is required',
-      mismatch: 'passwords do not match',
+      required: 'Password confirm is required',
+      mismatch: 'Passwords do not match',
     },
     firstName: {
-      required: 'firstName is required',
-      minLength: 'firstName should have at least 1 character',
+      required: 'FirstName is required',
+      minLength: 'FirstName should have at least 1 character',
     },
     lastName: {
-      required: 'lastName is required',
-      minLength: 'lastName should have at least 1 character',
+      required: 'LastName is required',
+      minLength: 'LastName should have at least 1 character',
     },
     // wrong: { ... } // does not work, we are typesafe
   };

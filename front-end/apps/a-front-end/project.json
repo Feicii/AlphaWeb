@@ -61,7 +61,8 @@
           "buildTarget": "a-front-end:build:production"
         },
         "development": {
-          "buildTarget": "a-front-end:build:development"
+          "buildTarget": "a-front-end:build:development",
+          "proxyConfig": "apps/a-front-end/proxy.config.json"
         }
       },
       "defaultConfiguration": "development"
