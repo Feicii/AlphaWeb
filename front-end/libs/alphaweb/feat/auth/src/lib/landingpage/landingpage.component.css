@@ -4,64 +4,33 @@
   color: #333;
 }
 
-.header {
-  background-color: #4CAF50;
-  color: white;
-  padding: 1rem;
-  position: relative; /* Positioning context for the button */
-}
-
-.header h1 {
-  margin: 0;
-  font-size: 2.5rem;
-}
-
-.header p {
-  margin: 0.5rem 0 0;
-}
-
-.login-button {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background-color: white;
-  color: #4CAF50;
-  border: 2px solid #4CAF50;
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.login-button:hover {
-  background-color: #4CAF50;
-  color: white;
-}
-
 .main-content {
   padding: 2rem;
 }
 
-.features, .about {
+.shop, .about {
   margin-bottom: 2rem;
 }
 
-.features h2, .about h2 {
+.shop h2, .about h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 
-.features ul {
+.shop ul {
   list-style-type: none;
   padding: 0;
+  display: flex; /* Verwende Flexbox */
+  justify-content: space-around; /* Verteile die Elemente gleichmäßig */
 }
 
-.features li {
+.shop li {
   background-color: #f9f9f9;
-  margin: 0.5rem 0;
-  padding: 0.5rem;
+  margin: 0.5rem;
+  padding: 1rem;
   border: 1px solid #ddd;
+  flex: 1; /* Jedes Produkt nimmt den gleichen Platz ein */
+  min-width: 200px; /* Mindestbreite für jedes Produkt */
 }
 
 .footer {

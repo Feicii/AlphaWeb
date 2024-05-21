@@ -22,6 +22,7 @@ export class BasicAuthService {
 
   get isAuthenticated() {
     return this.authToken !== null;
+    // return true;
   }
 
   register(command: UserRegistrationCommand): Promise<User> {

@@ -1,0 +1,9 @@
+{
+  "name": "alphaweb-feat-main",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/alphaweb/feat/main/src",
+  "prefix": "front-end",
+  "tags": [],
+  "projectType": "library",
+  "targets": {}
+}

@@ -1,0 +1,9 @@
+{
+  "name": "alphaweb-ui-toolbar",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/alphaweb/ui/toolbar/src",
+  "prefix": "front-end",
+  "tags": [],
+  "projectType": "library",
+  "targets": {}
+}
