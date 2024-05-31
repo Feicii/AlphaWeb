@@ -1,0 +1,10 @@
+<div class="shop-container">
+  <h2>Shop</h2>
+  <ul class="product-grid">
+    <li *ngFor="let product of products">
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.description }}</p>
+      <button mat-raised-button color="primary">In den Warenkorb</button>
+    </li>
+  </ul>
+</div>

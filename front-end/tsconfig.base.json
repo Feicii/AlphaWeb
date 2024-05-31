@@ -29,6 +29,7 @@
       "@alphaweb/util/validators/password": [
         "libs/alphaweb/util/validators/Validators.ts"
       ],
+      
       "@front-end/alphaweb/ui/bottom-sheet": [
         "libs/alphaweb/ui/bottom-sheet/src/index.ts"
       ],

@@ -1,43 +1,59 @@
+@import 'apps/a-front-end/src/styles/index.scss';
+
 .landing-container {
-  font-family: Arial, sans-serif;
-  text-align: center;
+  font-family: 'Roboto', sans-serif;
   color: #333;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: #0A5C94;
+  color: white;
+  padding: 2rem 1rem;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+.header p {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 300;
 }
 
 .main-content {
-  padding: 2rem;
+  flex: 1;
+  padding: 2rem 1rem;
 }
 
-.shop, .about {
-  margin-bottom: 2rem;
+.about {
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  text-align: left;
 }
 
-.shop h2, .about h2 {
+.about h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
+  color: #0A5C94;
 }
 
-.shop ul {
-  list-style-type: none;
-  padding: 0;
-  display: flex; /* Verwende Flexbox */
-  justify-content: space-around; /* Verteile die Elemente gleichmäßig */
-}
-
-.shop li {
-  background-color: #f9f9f9;
-  margin: 0.5rem;
-  padding: 1rem;
-  border: 1px solid #ddd;
-  flex: 1; /* Jedes Produkt nimmt den gleichen Platz ein */
-  min-width: 200px; /* Mindestbreite für jedes Produkt */
+.about p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
 }
 
 .footer {
   background-color: #f1f1f1;
   color: #666;
   padding: 1rem;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  text-align: center;
 }

@@ -2,6 +2,8 @@ import { Route } from '@angular/router';
 import { LoginContainerComponent } from './login/login-container.component';
 import { RegisterContainerComponent } from './register/register-container.component';
 import {LandingpageContainerComponent} from "./landingpage/landingpage-container.component";
+import {ShopContainerComponent} from "./shop/shop-container.component";
+import {SupportContainerComponent} from "./support/support-container.component";
 
 // /auth
 
@@ -14,7 +16,9 @@ export const featureAuthRoutes: Route[] = [
 
   // static route
   { path: 'register', component: RegisterContainerComponent },
-  { path: 'landingpage', component: LandingpageContainerComponent },
+  { path: 'shop', component: ShopContainerComponent },
+  { path: 'landingpage', component:LandingpageContainerComponent},
+  { path: 'support', component:SupportContainerComponent}
 
 
   // catch all route

@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'ui-toolbar',
@@ -18,6 +19,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatTooltipModule,
     MatToolbarModule,
     MatMenuModule,
+    RouterLink
   ],
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss'],
