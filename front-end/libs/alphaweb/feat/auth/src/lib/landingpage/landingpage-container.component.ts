@@ -6,11 +6,13 @@ import {LoginFormData} from "../model/login-view.model";
 import {UserLoginCommand} from "@alphaweb/data/user";
 import {ToolbarComponent} from "@alphaweb/ui/toolbar";
 
+
 @Component({
   selector: 'frontend-landingpage-container',
   standalone: true,
   imports: [CommonModule, LandingpageComponent, LoginComponent, ToolbarComponent],
-  template: ` <ui-toolbar></ui-toolbar><frontend-landingpage></frontend-landingpage> `,
+  template: ` <ui-toolbar></ui-toolbar>
+  <frontend-landingpage></frontend-landingpage>`,
   styles: [],
 })
 export class LandingpageContainerComponent {

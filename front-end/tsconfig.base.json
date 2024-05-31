@@ -19,19 +19,21 @@
       "@alphaweb/data/user": ["libs/alphaweb/data/user/src/index.ts"],
       "@alphaweb/feat/auth": ["libs/alphaweb/feat/auth/src/index.ts"],
       "@alphaweb/feat/main": ["libs/alphaweb/feat/main/src/index.ts"],
+      "@alphaweb/feat/profile": ["libs/alphaweb/feat/profile/src/index.ts"],
       "@alphaweb/feat/timeline": ["libs/alphaweb/feat/timeline/src/index.ts"],
       "@alphaweb/ui/strengthbar": [
         "libs/alphaweb/ui/strengthbar/src/lib/index.ts"
       ],
+      "@alphaweb/ui/toolbar": ["libs/alphaweb/ui/toolbar/src/index.ts"],
       "@alphaweb/util": ["libs/alphaweb/util/index.ts"],
       "@alphaweb/util/validators/password": [
         "libs/alphaweb/util/validators/Validators.ts"
       ],
-      "@alphaweb/feat/profile": [
-        "libs/alphaweb/feat/profile/src/index.ts"
+      "@front-end/alphaweb/ui/bottom-sheet": [
+        "libs/alphaweb/ui/bottom-sheet/src/index.ts"
       ],
-      "@alphaweb/ui/toolbar": [
-        "libs/alphaweb/ui/toolbar/src/index.ts"
+      "@front-end/alphaweb/ui/stepper": [
+        "libs/alphaweb/ui/stepper/src/index.ts"
       ]
     }
   },

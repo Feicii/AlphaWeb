@@ -1,0 +1,9 @@
+{
+  "name": "alphaweb-ui-bottom-sheet",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/alphaweb/ui/bottom-sheet/src",
+  "prefix": "front-end",
+  "tags": [],
+  "projectType": "library",
+  "targets": {}
+}

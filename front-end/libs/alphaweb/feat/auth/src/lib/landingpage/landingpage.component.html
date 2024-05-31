@@ -1,36 +1,32 @@
-
-    <a routerLink="../login"> Go to Login </a>
-    <div class="landing-container">
-      <main class="main-content">
-        <section class="shop">
-          <h2>Shop</h2>
-          <ul>
-            <li>
-              <h3>Produkt 1</h3>
-              <p>Beschreibung von Produkt 1.</p>
-              <button>In den Warenkorb</button>
-            </li>
-            <li>
-              <h3>Produkt 2</h3>
-              <p>Beschreibung von Produkt 2.</p>
-              <button>In den Warenkorb</button>
-            </li>
-            <li>
-              <h3>Produkt 3</h3>
-              <p>Beschreibung von Produkt 3.</p>
-              <button>In den Warenkorb</button>
-            </li>
-          </ul>
-        </section>
-        <section class="about">
-          <h2>Über uns</h2>
-          <p>Erfahren Sie mehr über unser Unternehmen und was wir tun.</p>
-        </section>
-      </main>
-      <footer class="footer">
-        <p>&copy; 2024 AlphaWeb. Alle Rechte vorbehalten.</p>
-      </footer>
-    </div>
-
-
-
+<a routerLink="../login" mat-button> Go to Login </a>
+<div class="landing-container">
+  <main class="main-content">
+    <section class="shop">
+      <h2>Shop</h2>
+      <ul>
+        <li>
+          <h3>Produkt 1</h3>
+          <p>Beschreibung von Produkt 1.</p>
+          <button mat-raised-button color="primary"(click)="openSheet()">Bestellen</button>
+        </li>
+        <li>
+          <h3>Produkt 2</h3>
+          <p>Beschreibung von Produkt 2.</p>
+          <button mat-raised-button color="primary" (click)="openSheet()">Bestellen</button>
+        </li>
+        <li>
+          <h3>Produkt 3</h3>
+          <p>Beschreibung von Produkt 3.</p>
+          <button mat-raised-button color="primary"(click)="openSheet()">"Bestellen</button>
+        </li>
+      </ul>
+    </section>
+    <section class="about">
+      <h2>Über uns</h2>
+      <p>Erfahren Sie mehr über unser Unternehmen und was wir tun.</p>
+    </section>
+  </main>
+  <footer class="footer">
+    <p>&copy; 2024 AlphaWeb. Alle Rechte vorbehalten.</p>
+  </footer>
+</div>
