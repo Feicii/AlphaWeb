@@ -29,9 +29,11 @@
       "@alphaweb/util/validators/password": [
         "libs/alphaweb/util/validators/Validators.ts"
       ],
-      
       "@front-end/alphaweb/ui/bottom-sheet": [
         "libs/alphaweb/ui/bottom-sheet/src/index.ts"
+      ],
+      "@front-end/alphaweb/ui/gridlist": [
+        "libs/alphaweb/ui/gridlist/src/index.ts"
       ],
       "@front-end/alphaweb/ui/stepper": [
         "libs/alphaweb/ui/stepper/src/index.ts"
