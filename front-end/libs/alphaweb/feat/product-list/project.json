@@ -1,0 +1,9 @@
+{
+  "name": "alphaweb-feat-product-list",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/alphaweb/feat/product-list/src",
+  "prefix": "front-end",
+  "tags": [],
+  "projectType": "library",
+  "targets": {}
+}

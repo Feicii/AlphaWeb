@@ -1,0 +1,9 @@
+{
+  "name": "alphaweb-feat-edit-profile-detail",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/alphaweb/feat/edit-profile-detail/src",
+  "prefix": "front-end",
+  "tags": [],
+  "projectType": "library",
+  "targets": {}
+}

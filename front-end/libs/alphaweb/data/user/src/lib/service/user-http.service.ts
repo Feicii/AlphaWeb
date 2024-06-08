@@ -16,11 +16,12 @@ export class UserHttpService{
         // `firstValueFrom` turns an `Observable` into a `Promise`
         return lastValueFrom(this.http.post<User>(`/api/registration`, command));
     }
-  // login(headers: HttpHeaders): Promise<User> {
+  login(headers: HttpHeaders): Promise<User> {
   // login(): Promise<User> {
   // `firstValueFrom` turns an `Observable` into a `Promise`
   // return lastValueFrom(this.http.get<User>('/api/user', { headers }));
   // return lastValueFrom(this.http.get<User>('/api/user'));
-  // return lastValueFrom(this.http.get<User>('/api/user'));
-  // }
+  return lastValueFrom(this.http.get<User>('/api/user'));
+  }
+
 }

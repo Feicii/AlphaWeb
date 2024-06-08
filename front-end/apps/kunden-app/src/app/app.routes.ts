@@ -8,8 +8,7 @@ export const appRoutes: Route[] = [
 
   {path: 'auth',children: featureAuthRoutes},
   {path:'', loadChildren: () =>
-      import('@alphaweb/feat/main').then(m =>
-        m.AlphaWebFeatMainModule),
+      import('@alphaweb/feat/kunden-main').then(m => m.AlphawebFeatKundenMainModule),
     canActivate: [AuthGuard]
   },
 

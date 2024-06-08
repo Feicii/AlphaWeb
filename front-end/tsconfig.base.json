@@ -16,8 +16,12 @@
     "baseUrl": ".",
     "paths": {
       "@alphaweb/data/auth": ["libs/alphaweb/data/auth/src/index.ts"],
+      "@alphaweb/data/product": ["libs/alphaweb/data/product/src/index.ts"],
       "@alphaweb/data/user": ["libs/alphaweb/data/user/src/index.ts"],
       "@alphaweb/feat/auth": ["libs/alphaweb/feat/auth/src/index.ts"],
+      "@alphaweb/feat/kunden-main": [
+        "libs/alphaweb/feat/kunden-main/src/index.ts"
+      ],
       "@alphaweb/feat/main": ["libs/alphaweb/feat/main/src/index.ts"],
       "@alphaweb/feat/profile": ["libs/alphaweb/feat/profile/src/index.ts"],
       "@alphaweb/feat/timeline": ["libs/alphaweb/feat/timeline/src/index.ts"],
@@ -28,6 +32,21 @@
       "@alphaweb/util": ["libs/alphaweb/util/index.ts"],
       "@alphaweb/util/validators/password": [
         "libs/alphaweb/util/validators/Validators.ts"
+      ],
+      "@front-end/alphaweb/feat/buy-product": [
+        "libs/alphaweb/feat/buy-product/src/index.ts"
+      ],
+      "@front-end/alphaweb/feat/edit-profile-detail": [
+        "libs/alphaweb/feat/edit-profile-detail/src/index.ts"
+      ],
+      "@front-end/alphaweb/feat/product-list": [
+        "libs/alphaweb/feat/product-list/src/index.ts"
+      ],
+      "@front-end/alphaweb/feat/product-view": [
+        "libs/alphaweb/feat/product-view/src/index.ts"
+      ],
+      "@front-end/alphaweb/feat/send-support-message": [
+        "libs/alphaweb/feat/send-support-message/src/index.ts"
       ],
       "@front-end/alphaweb/ui/bottom-sheet": [
         "libs/alphaweb/ui/bottom-sheet/src/index.ts"

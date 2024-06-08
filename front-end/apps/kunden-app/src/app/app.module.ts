@@ -1,0 +1,44 @@
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { BasicAuthInterceptor, ErrorInterceptor } from '@alphaweb/data/auth';
+import { RouterModule } from '@angular/router';
+import { appRoutes } from './app.routes';
+
+
+
+
+// Importiere die Landingpage-Komponente
+
+
+@NgModule({
+  declarations: [
+    AppComponent,
+
+  ],
+  imports: [
+    HttpClientModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    RouterModule.forRoot(appRoutes, {useHash: true}),
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: BasicAuthInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptor,
+      multi: true,
+    },
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule {
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  constructor() {}
+}
