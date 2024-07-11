@@ -1,5 +1,5 @@
 import { Route } from '@angular/router';
-import {featureAuthRoutes, LoginContainerComponent, RegisterContainerComponent} from '@alphaweb/feat/auth';
+import {featureAuthRoutes } from '@alphaweb/feat/auth';
 import {AuthGuard} from '@alphaweb/data/auth';
 
 export const appRoutes: Route[] = [

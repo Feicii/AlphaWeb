@@ -4,14 +4,17 @@ import {HttpClient} from '@angular/common/http';
 import {ProductCreateCommand} from '../actions/product.action';
 
 @Injectable({ providedIn: 'root' })
-export class ProjectService {
+export class ProductHttpService {
   private http = inject(HttpClient);
 
   create(command: ProductCreateCommand) {
     return lastValueFrom(
-      this.http.post<void>('/api/project', command)
+      this.http.post<void>('/api/product', command)
     );
   }
+
+
+
 }
 
 

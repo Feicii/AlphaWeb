@@ -4,6 +4,8 @@ import * as UserAction from '@alphaweb/data/user';
 import { UserLoginCommand } from '@alphaweb/data/user';
 import { LoginComponent } from './login.component';
 import { LoginFormData } from '../model/login-view.model';
+import {Router} from "@angular/router";
+import {BasicAuthService} from "@alphaweb/data/auth";
 // import { Store } from '@ngrx/store';
 
 // Smart Container which connects to a Service or Store.
@@ -16,8 +18,8 @@ import { LoginFormData } from '../model/login-view.model';
   styles: [],
 })
 export class LoginContainerComponent {
-  // authService = inject(BasicAuthService);
-  // router = inject(Router);
+  authService = inject(BasicAuthService);
+  router = inject(Router);
   // private store = inject(Store);
 
   onLogin(formData: LoginFormData) {
@@ -29,16 +31,16 @@ export class LoginContainerComponent {
     // no !!
     // this.router.navigate(['/']);
 
-    // this.authService
-    // 	.login(command)
-    // 	// success
-    // 	.then(() => {
-    // 		this.router.navigate(['/']);
-    // 	})
-    // 	// failure
-    // 	.catch((error) => {
-    // 		// TODO Show Angular Material Snackbar
-    // 		console.error('Login failed:', error);
-    // 	});
+    this.authService
+    	.login(command)
+    	// success
+    	.then(() => {
+    		this.router.navigate(['/landingpage']);
+    	})
+    	// failure
+    	.catch((error) => {
+    		// TODO Show Angular Material Snackbar
+    		console.error('Login failed:', error);
+    	});
   }
 }

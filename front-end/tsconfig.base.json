@@ -33,19 +33,19 @@
       "@alphaweb/util/validators/password": [
         "libs/alphaweb/util/validators/Validators.ts"
       ],
-      "@front-end/alphaweb/feat/buy-product": [
+      "@alphaweb/feat/buy-product": [
         "libs/alphaweb/feat/buy-product/src/index.ts"
       ],
-      "@front-end/alphaweb/feat/edit-profile-detail": [
+      "@alphaweb/feat/edit-profile-detail": [
         "libs/alphaweb/feat/edit-profile-detail/src/index.ts"
       ],
-      "@front-end/alphaweb/feat/product-list": [
+      "@alphaweb/feat/product-list": [
         "libs/alphaweb/feat/product-list/src/index.ts"
       ],
-      "@front-end/alphaweb/feat/product-view": [
+      "@alphaweb/feat/product-view": [
         "libs/alphaweb/feat/product-view/src/index.ts"
       ],
-      "@front-end/alphaweb/feat/send-support-message": [
+      "@alphaweb/feat/send-support-message": [
         "libs/alphaweb/feat/send-support-message/src/index.ts"
       ],
       "@front-end/alphaweb/ui/bottom-sheet": [

@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RegisterComponent } from './register.component';
 import {RegisterFormData} from '../model/register-view.model';
 import {UserHttpService} from '@alphaweb/data/user';
+import {BasicAuthService} from "@alphaweb/data/auth";
+import {Router} from "@angular/router";
 
 
 
@@ -14,13 +16,23 @@ import {UserHttpService} from '@alphaweb/data/user';
   styles: [],
 })
 export class RegisterContainerComponent {
-
-  userService: UserHttpService = inject(UserHttpService);
+  authService = inject(BasicAuthService);
+  router = inject(Router);
   onRegister(formData: RegisterFormData) {
 
     const {passwordConfirm, ...command} =formData;
 
-    this.userService.register(command);
+    this.authService
+      .register(command)
+      // success
+      .then(() => {
+        this.router.navigate(['/auth/login']);
+      })
+      // failure
+      .catch((error) => {
+        // TODO Show Angular Material Snackbar
+        console.error('Register failed:', error);
+      });
 
   }
 }

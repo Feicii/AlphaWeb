@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
   selector: 'front-end-alphaweb-feat-edit-profile-detail',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './alphaweb-feat-edit-profile-detail.component.html',
-  styleUrl: './alphaweb-feat-edit-profile-detail.component.css',
+  templateUrl: './edit-profile-detail.component.html',
+  styleUrl: './edit-profile-detail.component.css',
 })
 export class EditProfileDetailComponent {}

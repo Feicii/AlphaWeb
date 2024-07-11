@@ -1,1 +1,15 @@
-<p>alphaweb-feat-send-support-message works!</p>
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label for="subject">Betreff:</label>
+    <input type="text" id="subject" [(ngModel)]="subject" name="subject" required>
+  </div>
+  <div>
+    <label for="orderNumber">Bestellnummer (optional):</label>
+    <input type="text" id="orderNumber" [(ngModel)]="orderNumber" name="orderNumber">
+  </div>
+  <div>
+    <label for="message">Nachricht:</label>
+    <textarea id="message" [(ngModel)]="message" name="message" required></textarea>
+  </div>
+  <button type="submit">Senden</button>
+</form>

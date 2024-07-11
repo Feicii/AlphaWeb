@@ -1,7 +1,7 @@
 {
   "/api/*": {
 //    "target": "http://localhost:8080"
-    "target": "http://10.91.102.124:8080",
+    "target": "http://192.168.117.108:8080",
     "secure": false,
     "logLevel": "debug"
   }

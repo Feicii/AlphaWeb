@@ -16,9 +16,7 @@ export const featureAuthRoutes: Route[] = [
 
   // static route
   { path: 'register', component: RegisterContainerComponent },
-  { path: 'shop', component: ShopContainerComponent },
-  { path: 'landingpage', component:LandingpageContainerComponent},
-  { path: 'support', component:SupportContainerComponent}
+
 
 
   // catch all route

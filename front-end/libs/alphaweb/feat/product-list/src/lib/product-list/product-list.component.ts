@@ -1,11 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { MatList, MatListItem, MatListSubheaderCssMatStyler } from '@angular/material/list';
+import { MatDivider } from '@angular/material/divider';
+import { MatLine } from '@angular/material/core';
+import { MatButton } from '@angular/material/button';
 
 @Component({
-  selector: 'front-end-alphaweb-feat-product-list',
+  selector: 'lib-product-list',
   standalone: true,
-  imports: [CommonModule],
-  templateUrl: './alphaweb-feat-product-list.component.html',
-  styleUrl: './alphaweb-feat-product-list.component.css',
+  imports: [
+    CommonModule,
+    MatListSubheaderCssMatStyler,
+    RouterLink,
+    MatListItem,
+    MatList,
+    MatDivider,
+    MatLine,
+    MatButton
+  ],
+  templateUrl: './product-list.component.html',
+  styleUrl: './product-list.component.css',
 })
-export class ProductListComponent {}
+export class ProductListComponent {
+  @Input() name!: string;
+
+}

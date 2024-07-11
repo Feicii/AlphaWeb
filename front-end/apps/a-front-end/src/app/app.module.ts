@@ -10,7 +10,6 @@ import { appRoutes } from './app.routes';
 
 
 
-// Importiere die Landingpage-Komponente
 
 
 @NgModule({
@@ -39,6 +38,6 @@ import { appRoutes } from './app.routes';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
+
   constructor() {}
 }

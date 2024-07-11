@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
+import {Component, OnInit, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatStepperModule} from '@angular/material/stepper';
-import {FormBuilder, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 
+import {BuyFormType} from '../../../../../feat/auth/src/lib/model/stepper-view.model';
+
 @Component({
+  // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'ui-stepper',
   standalone: true,
   imports: [CommonModule,MatButtonModule,
@@ -18,14 +21,22 @@ import {MatInputModule} from '@angular/material/input';
   templateUrl: './alphaweb-ui-stepper.component.html',
   styleUrl: './alphaweb-ui-stepper.component.css',
 })
-export class AlphawebUiStepperComponent {
-  firstFormGroup = this._formBuilder.group({
-    firstCtrl: ['', Validators.required],
-  });
-  secondFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
-  });
-  isLinear = false;
+export class AlphawebUiStepperComponent  {
+  buyForm: FormGroup<BuyFormType>;
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(private _formBuilder: FormBuilder) {
+    this.buyForm = this._formBuilder.nonNullable.group({
+      message: ['', [Validators.required]],
+      address: ['', [Validators.required]],
+      billingAddress: ['', [Validators.required]]
+    });
+  }
+
+  getControlByName(controlName: keyof BuyFormType) {
+    return this.buyForm.controls[controlName];
+  }
+
+  ngOnInit() {}
+
+
 }

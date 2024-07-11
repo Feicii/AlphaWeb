@@ -3,40 +3,29 @@ import { CommonModule } from '@angular/common';
 import { ShopComponent} from './shop.component';
 import {LoginComponent} from "../login/login.component";
 import {LoginFormData} from "../model/login-view.model";
-import {UserLoginCommand} from "@alphaweb/data/user";
+import {LoginView, UserLoginCommand} from "@alphaweb/data/user";
 import {ToolbarComponent} from "@alphaweb/ui/toolbar";
+import {ActivatedRoute} from "@angular/router";
 
 
 @Component({
   selector: 'frontend-shop-container',
   standalone: true,
   imports: [CommonModule, LoginComponent, ToolbarComponent, ShopComponent],
-  template: ` <ui-toolbar></ui-toolbar>
-  <frontend-shop></frontend-shop>`,
+  template: `
+  <frontend-shop [products]="loginView.products"></frontend-shop>`,
   styles: [],
 })
 export class ShopContainerComponent {
   // router = inject(Router);
 
-  onLogin(formData: LoginFormData) {
-    const command: UserLoginCommand = formData;
+  loginView!: LoginView;
 
-    // we dispatch an action
-    // this.store.dispatch(UserAction.loginUser(command));
+  constructor(private route: ActivatedRoute) {
+    this.route.data.subscribe(({ loginView }) => {
+      this.loginView = loginView;
 
-    // no !!
-    // this.router.navigate(['/']);
-
-    // this.authService
-    // 	.login(command)
-    // 	// success
-    // 	.then(() => {
-    // 		this.router.navigate(['/']);
-    // 	})
-    // 	// failure
-    // 	.catch((error) => {
-    // 		// TODO Show Angular Material Snackbar
-    // 		console.error('Login failed:', error);
-    // 	});
+      console.log('ProductShop#ctor', this.loginView);
+    });
   }
 }

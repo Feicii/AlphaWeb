@@ -1,37 +1,55 @@
+<mat-stepper orientation="vertical" [linear]="true" #stepper>
+  <!-- Schritt 1: Nachricht eingeben -->
+  <mat-step [stepControl]="getControlByName('message')">
+    <form [formGroup]="buyForm">
+      <ng-template matStepLabel>Nachricht eingeben</ng-template>
+      <mat-form-field>
+        <mat-label>Nachricht</mat-label>
+        <textarea matInput formControlName="message" placeholder="Ihre Nachricht" rows="5" required></textarea>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext [disabled]="!getControlByName('message').valid">Weiter</button>
+      </div>
+    </form>
+  </mat-step>
 
-<mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
-  <mat-step [stepControl]="firstFormGroup">
-    <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>Fill out your name</ng-template>
+  <!-- Schritt 2: Adresse eingeben -->
+  <mat-step [stepControl]="getControlByName('address')">
+    <form [formGroup]="buyForm">
+      <ng-template matStepLabel>Adresse eingeben</ng-template>
       <mat-form-field>
-        <mat-label>Name</mat-label>
-        <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+        <mat-label>Adresse</mat-label>
+        <input matInput formControlName="address" placeholder="Ihre Adresse" required>
       </mat-form-field>
       <div>
-        <button mat-button matStepperNext>Next</button>
+        <button mat-button matStepperPrevious>Zurück</button>
+        <button mat-button matStepperNext [disabled]="!getControlByName('address').valid">Weiter</button>
       </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup">
-      <ng-template matStepLabel>Fill out your address</ng-template>
+
+  <!-- Schritt 3: Rechnungsadresse eingeben -->
+  <mat-step [stepControl]="getControlByName('billingAddress')">
+    <form [formGroup]="buyForm">
+      <ng-template matStepLabel>Rechnungsadresse eingeben</ng-template>
       <mat-form-field>
-        <mat-label>Address</mat-label>
-        <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-               required>
+        <mat-label>Rechnungsadresse</mat-label>
+        <input matInput formControlName="billingAddress" placeholder="Ihre Rechnungsadresse" required>
       </mat-form-field>
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <button mat-button matStepperPrevious>Zurück</button>
+        <button mat-button matStepperNext [disabled]="!getControlByName('billingAddress').valid">Weiter</button>
       </div>
     </form>
   </mat-step>
+
+  <!-- Schritt 4: Abschluss -->
   <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
-    <p>You are now done.</p>
+    <ng-template matStepLabel>Fertig</ng-template>
+    <p>Sie sind fertig.</p>
     <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
+      <button mat-button matStepperPrevious>Zurück</button>
+      <button mat-button (click)="stepper.reset()">Absenden</button>
     </div>
   </mat-step>
 </mat-stepper>

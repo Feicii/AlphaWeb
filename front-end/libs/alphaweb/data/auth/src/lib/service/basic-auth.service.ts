@@ -8,7 +8,8 @@ import {
     UserHttpService,
     UserRegistrationCommand,
 } from '@alphaweb/data/user';
-import {User} from "../../../../user/src/lib/model/user-domain.model";
+import {LoginView, User} from "../../../../user/src/lib/model/user-domain.model";
+import {UserLoginCommand} from "../../../../user/src";
 
 // import { UserRegistrationCommand, UserHttpService } from '@alphaweb/data/user';
 
@@ -22,6 +23,7 @@ export class BasicAuthService {
 
   get isAuthenticated() {
     return this.authToken !== null;
+
     // return true;
   }
 
@@ -31,26 +33,26 @@ export class BasicAuthService {
     return this.userHttpService.register(command);
   }
 
-  // async login(command: UserLoginCommand): Promise<User> {
-  //   console.log('BasicAuthService#login', command);
-  //
-  //   // 1. Generate Auth Token
-  //   this.authToken = generateAuthToken(command.email, command.password);
-  //
-  //   // 2. Auth Header will be appended by the interceptor on the http login request
-  //   try {
-  //     return await this.userHttpService.login();
-  //   } catch (error) {
-  //     // 3. On Failure, null Auth Token
-  //     this.authToken = null;
-  //     throw error;
-  //   }
-  // }
-  //
-  // logout() {
-  //   this.authToken = null;
-  //   document.location.reload();
-  // }
+  async login(command: UserLoginCommand): Promise<LoginView> {
+    console.log('BasicAuthService#login', command);
+
+    // 1. Generate Auth Token
+    this.authToken = generateAuthToken(command.email, command.password);
+
+    // 2. Auth Header will be appended by the interceptor on the http login request
+    try {
+      return await this.userHttpService.login();
+    } catch (error) {
+      // 3. On Failure, null Auth Token
+      this.authToken = null;
+      throw error;
+    }
+  }
+
+  logout() {
+    this.authToken = null;
+    document.location.reload();
+  }
 
   appendAuthHeader(req: HttpRequest<any>): HttpRequest<any> {
     if (this.authToken == null) return req;

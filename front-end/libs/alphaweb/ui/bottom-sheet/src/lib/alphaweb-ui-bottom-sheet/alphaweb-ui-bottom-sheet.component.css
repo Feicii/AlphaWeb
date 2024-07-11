@@ -1,0 +1,7 @@
+/* bottom-sheet.component.css */
+
+::ng-deep .mat-bottom-sheet-container {
+  width: 80% !important; /* Ändern Sie die Breite nach Bedarf */
+  max-width: 80% !important; /* Stellen Sie sicher, dass die maximale Breite ebenfalls angepasst wird */
+  margin: 0 auto; /* Zentriert das Bottom Sheet horizontal */
+}

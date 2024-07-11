@@ -1,25 +1,34 @@
+
+
 export interface User{
   email: string;
   role: string;
   profile: Profile;
 }
-
-
 export interface Profile{
   firstName: string;
   lastName: string;
 }
 export interface LoginView {
   authUser: User;
-  editProfilDetail: ;
-  sendSupportMessage:;
-  productKaufen:;
+  orders: Order[];
+  products: Product[];
 }
-export enum Role{
-  Admin ="ADMIN",
-  User = "User"
+
+export interface Order {
+  userId: string;
+  productId: string;
+  orderDate: Date;
+  status: string;
 }
-// export enum Role{
-//   Admin ="0",
-//   User = "1"
-// }
+
+export interface Product {
+  id: string;
+  name: string;
+  price: number;
+  description: string;
+  productPic: Media;
+}
+export interface Media {
+  filename: string;
+}

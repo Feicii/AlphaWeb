@@ -1,11 +1,23 @@
-import { Component } from '@angular/core';
+import {Component, Input, input} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {Product} from "../../../../../data/product/src/lib/model/product-domain.model";
+import {BuyProductCommand} from "@alphaweb/data/user";
 
 @Component({
-  selector: 'front-end-alphaweb-feat-buy-product',
+  selector: 'buy-product',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './alphaweb-feat-buy-product.component.html',
-  styleUrl: './alphaweb-feat-buy-product.component.css',
+  templateUrl: './buy-product.component.html',
+  styleUrl: './buy-product.component.css',
 })
-export class BuyProductComponent {}
+export class BuyProductComponent {
+  @Input() product!: Product;
+  ngOnInit():void{
+
+  }
+  buyProduct():void{
+    const command: BuyProductCommand ={
+
+    };
+  }
+}
