@@ -1,4 +1,4 @@
-import {Component, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatStepperModule} from '@angular/material/stepper';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
@@ -6,7 +6,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 
-import {BuyFormType} from '../../../../../feat/auth/src/lib/model/stepper-view.model';
+import {BuyFormData, BuyFormType} from '../../../../../feat/auth/src/lib/model/stepper-view.model';
 
 @Component({
   // eslint-disable-next-line @angular-eslint/component-selector
@@ -21,10 +21,15 @@ import {BuyFormType} from '../../../../../feat/auth/src/lib/model/stepper-view.m
   templateUrl: './alphaweb-ui-stepper.component.html',
   styleUrl: './alphaweb-ui-stepper.component.css',
 })
-export class AlphawebUiStepperComponent  {
-  buyForm: FormGroup<BuyFormType>;
+export class AlphawebUiStepperComponent implements OnInit {
+  @Output() formCompleted = new EventEmitter<BuyFormData>();
+
+  buyForm!: FormGroup<BuyFormType>;
 
   constructor(private _formBuilder: FormBuilder) {
+  }
+
+  ngOnInit() {
     this.buyForm = this._formBuilder.nonNullable.group({
       message: ['', [Validators.required]],
       address: ['', [Validators.required]],
@@ -36,7 +41,12 @@ export class AlphawebUiStepperComponent  {
     return this.buyForm.controls[controlName];
   }
 
-  ngOnInit() {}
+  completeForm() {
+    console.log('Form Completed:', this.buyForm.value)
+    if (this.buyForm.valid) {
+      this.formCompleted.emit(this.buyForm.value as BuyFormData);
+    }
+  }
 
 
 }

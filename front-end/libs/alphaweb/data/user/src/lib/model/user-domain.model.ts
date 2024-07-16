@@ -18,8 +18,12 @@ export interface LoginView {
 export interface Order {
   userId: string;
   productId: string;
+  address: string;
+  billingAddress: string;
+  message: string;
   orderDate: Date;
   status: string;
+  productPic: Media;
 }
 
 export interface Product {

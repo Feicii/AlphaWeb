@@ -3,7 +3,7 @@ import {MatBottomSheet, MatBottomSheetModule} from "@angular/material/bottom-she
 import {RouterLink} from "@angular/router";
 import {MatButtonModule} from "@angular/material/button";
 import {AlphawebUiBottomSheetComponent} from "@front-end/alphaweb/ui/bottom-sheet";
-import {Product} from "@alphaweb/data/user";
+import {Product, UserHttpService} from "@alphaweb/data/user";
 import {JsonPipe, NgForOf} from "@angular/common";
 import {
   MatCard,
@@ -13,6 +13,8 @@ import {
   MatCardImage,
   MatCardTitle
 } from "@angular/material/card";
+import {AlphawebUiStepperComponent} from "@front-end/alphaweb/ui/stepper";
+import {BuyFormData} from "../model/stepper-view.model";
 
 
 @Component({
@@ -25,12 +27,18 @@ import {
 export class ShopComponent {
   @Input() products!: Product[];
   @Output() navigateToLogin = new EventEmitter<void>();
-  constructor(private bottomSheet:MatBottomSheet) {
+  constructor(private bottomSheet:MatBottomSheet, private userHttpService: UserHttpService) {
   }
-  openSheet(){
-    this.bottomSheet.open(AlphawebUiBottomSheetComponent);
+  openSheet(productId: string){
+    // this.bottomSheet.open(AlphawebUiBottomSheetComponent);
+    const ref = this.bottomSheet.open(AlphawebUiStepperComponent);
+    console.log('Product ID:', productId);
+    ref.instance.formCompleted.subscribe((formData: BuyFormData) => {
+      console.log('Form Data Received:', formData);
+      this.userHttpService.buyProduct({ productId, ...formData});
+    });
   }
-  onLoginClick() {
-    this.navigateToLogin.emit();
-  }
+  // onLoginClick() {
+  //   this.navigateToLogin.emit();
+  // }
 }

@@ -9,6 +9,10 @@ export interface UserLoginCommand{
   email: string,
   password: string
 }
-export interface BuyProductCommand{
 
+export interface BuyProductCommand{
+  productId: string;
+  message: string;
+  address: string;
+  billingAddress: string;
 }

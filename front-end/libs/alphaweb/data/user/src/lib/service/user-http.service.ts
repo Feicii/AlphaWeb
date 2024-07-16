@@ -23,8 +23,9 @@ export class UserHttpService{
   // return lastValueFrom(this.http.get<User>('/api/user'));
   return lastValueFrom(this.http.get<LoginView>('/api/user'));
   }
+
   buyProduct(command:BuyProductCommand): Promise<Product>{
-    return lastValueFrom(this.http.post<Product>('/api/user', command));
+    return lastValueFrom(this.http.post<Product>('/api/orders', command));
 
   }
   sendSupportMessage(message: { subject: string, orderNumber?: string, message: string }): Promise<any> {

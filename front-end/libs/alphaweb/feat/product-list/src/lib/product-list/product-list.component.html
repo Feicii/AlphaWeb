@@ -1,1 +1,23 @@
-<p>alphaweb-feat-product-list works!</p>
+<!-- product-list.component.html -->
+<div role="list">
+
+  <!-- Optional: Title for the list -->
+  <h1>Orders List</h1>
+
+  <!-- Loop over each order -->
+  <ng-container *ngFor="let order of orders">
+    <div>
+      <img mat-card-image [src]="'http://localhost:8080/api/media/' + order.productPic.filename" alt="Photo">
+
+      <div matLine>{{ order.orderDate | date: 'medium' }}</div>
+      <div matLine><strong>User ID:</strong> {{ order.userId }}</div>
+      <div matLine><strong>Product ID:</strong> {{ order.productId }}</div>
+      <div matLine><strong>Address:</strong> {{ order.address }}</div>
+      <div matLine><strong>Billing Address:</strong> {{ order.billingAddress }}</div>
+      <div matLine><strong>Message:</strong> {{ order.message }}</div>
+      <div matLine><strong>Status:</strong> {{ order.status }}</div>
+    </div>
+
+    <!-- Divider between items -->
+    <mat-divider inset></mat-divider>
+  </ng-container>

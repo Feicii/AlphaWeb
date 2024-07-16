@@ -9,23 +9,22 @@ import { LoginView } from '@alphaweb/data/user';
   standalone: true,
   imports: [CommonModule, ProductListComponent],
   template: `
-<!--    <lib-project-list-->
-<!--      [name]="loginView.authUser.firstName"-->
-<!--    ></lib-project-list>-->
+    <lib-product-list [orders]="loginView.orders">
+    </lib-product-list>
   `,
-  styles: ``,
+  styles: '',
 })
 export class ProductListContainerComponent {
 
-  // loginView: LoginView;
-  //
-  // route = inject(ActivatedRoute);
-  //
-  // constructor() {
-  //   this.route.data.subscribe(({ loginView }) => {
-  //     this.loginView = loginView;
-  //
-  //     console.log('ProductListContainer#ctor', this.loginView);
-  //   });
-  // }
+  loginView!: LoginView;
+
+  route = inject(ActivatedRoute);
+
+  constructor() {
+    this.route.data.subscribe(({ loginView }) => {
+      this.loginView = loginView;
+
+      console.log('ProductListContainer#ctor', this.loginView);
+    });
+  }
 }

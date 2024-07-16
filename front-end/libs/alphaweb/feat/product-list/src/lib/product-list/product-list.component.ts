@@ -5,6 +5,8 @@ import { MatList, MatListItem, MatListSubheaderCssMatStyler } from '@angular/mat
 import { MatDivider } from '@angular/material/divider';
 import { MatLine } from '@angular/material/core';
 import { MatButton } from '@angular/material/button';
+import {Order} from '@alphaweb/data/user';
+import {MatCardImage} from "@angular/material/card";
 
 @Component({
   selector: 'lib-product-list',
@@ -17,12 +19,12 @@ import { MatButton } from '@angular/material/button';
     MatList,
     MatDivider,
     MatLine,
-    MatButton
+    MatButton,
+    MatCardImage
   ],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css',
 })
 export class ProductListComponent {
-  @Input() name!: string;
-
+  @Input() orders: Order[] = [];
 }
